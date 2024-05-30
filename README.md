@@ -7,6 +7,7 @@ password: 2V%/C2BzfpGM*QC
 
 password db: xDtwuHClFwnA5ENf
 
+```
 # settings.py
 DATABASES = {
     "default": {
@@ -18,3 +19,4 @@ DATABASES = {
         },
     },
 }}
+```
