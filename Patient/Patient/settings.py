@@ -77,12 +77,10 @@ WSGI_APPLICATION = 'Patient.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'patient',
-        'USER': 'root',
-        'PASSWORD': '30061999',
+        'ENGINE': 'djongo',
+        'NAME':'patient',
         'HOST': 'localhost',
-        'PORT': '3306'
+        'PORT': 27017,
     }
 }
 
