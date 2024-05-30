@@ -1,11 +1,14 @@
 # Django_Hopital
+
 https://docs.google.com/document/d/1b3Cy2HGCNPf-fNsG8ojSIp7VDZZMZ_cp9wftFeABBY4/edit
 
+```
 url db: https://cloud.mongodb.com/
 mail: minhtan.amela@gmail.com
-password: 2V%/C2BzfpGM*QC
+password: 2V%/C2BzfpGM\*QC
 
 password db: xDtwuHClFwnA5ENf
+```
 
 ```
 # settings.py
@@ -19,4 +22,14 @@ DATABASES = {
         },
     },
 }}
+```
+
+```
+ pip install virtualenv
+
+ python -m venv env
+
+ source env/bin/activate
+
+ pip install -r requirements.txt
 ```
