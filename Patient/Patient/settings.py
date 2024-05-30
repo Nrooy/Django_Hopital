@@ -76,12 +76,14 @@ WSGI_APPLICATION = 'Patient.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME':'patient',
-        'HOST': 'localhost',
-        'PORT': 27017,
-    }
+    "default": {
+        "ENGINE": "djongo",
+        "NAME": "patient",
+        "ENFORCE_SCHEMA": False,
+        "CLIENT": {
+            "host": "mongodb+srv://minhtan:MUStsluC7iapdfFD@hopital.zz5pptw.mongodb.net/?retryWrites=true&w=majority"
+        },
+    },
 }
 
 

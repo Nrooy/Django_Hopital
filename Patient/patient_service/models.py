@@ -1,6 +1,7 @@
-from django.db import models
-
+# from django.db import models
+from djongo import models
 class HealthInsurance(models.Model):
+    _id = models.ObjectIdField()
     insurance_number = models.CharField(max_length=50, unique=True)
     provider_name = models.CharField(max_length=100)
     policy_start_date = models.DateField()
@@ -25,14 +26,12 @@ class Patient(models.Model):
     address = models.CharField(max_length=255, blank=True, null=True)
     phone_number = models.CharField(max_length=20, blank=True, null=True)
     email = models.EmailField(max_length=100, blank=True, null=True)
-    health_insurance = models.EmbeddedModelField(
-        model_container=HealthInsurance,
-        blank=True,
-        null=True
+    health_insurance = models.EmbeddedField(
+        model_container=HealthInsurance
     )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-
+    
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
 class Doctor(models.Model):
