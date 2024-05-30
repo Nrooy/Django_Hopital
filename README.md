@@ -8,6 +8,8 @@ mail: minhtan.amela@gmail.com
 password: 2V%/C2BzfpGM\*QC
 
 password db: xDtwuHClFwnA5ENf
+
+# Nếu mng không connect được mongo --> check ip đc add vào mongo chưa tại [đây](https://cloud.mongodb.com/v2/665821680d982749b330baba#/security/network/accessList)
 ```
 
 ```
@@ -21,7 +23,7 @@ DATABASES = {
             "host": "mongodb+srv://minhtan: xDtwuHClFwnA5ENf@hopital.zz5pptw.mongodb.net/?retryWrites=true&w=majority&appName=hopital"
         },
     },
-}}
+}
 ```
 
 ```
