@@ -26,5 +26,5 @@ router.register(r'payroll', PayrollViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-path('attendance/staff-attendance/<int:pk>/', AttendanceViewSet.as_view({'get': 'staff_attendance'}), name='staff-attendance'),
+    path('attendance/staff-attendance/<int:pk>/', AttendanceViewSet.as_view({'get': 'staff_attendance'}), name='staff-attendance'),
 ]
