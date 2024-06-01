@@ -23,14 +23,32 @@ class SpecializationViewSet(viewsets.ModelViewSet):
 
 
 class ScheduleViewSet(viewsets.ModelViewSet):
-    queryset = Schedule.objects.all()
     serializer_class = ScheduleSerializer
 
-# Ví dụ với Review
+    def get_queryset(self):
+        """
+        Optionally restricts the returned schedules to a given doctor,
+        by filtering against a `doctor` query parameter in the URL.
+        """
+        queryset = Schedule.objects.all()
+        doctor_id = self.request.query_params.get('doctor_id', None)
+        if doctor_id is not None:
+            queryset = queryset.filter(doctor_id=doctor_id)
+        return queryset
 
 
 class ReviewViewSet(viewsets.ModelViewSet):
-    queryset = Review.objects.all()
     serializer_class = ReviewSerializer
+
+    def get_queryset(self):
+        """
+        Optionally restricts the returned reviews to a given doctor,
+        by filtering against a `doctor` query parameter in the URL.
+        """
+        queryset = Review.objects.all()
+        doctor_id = self.request.query_params.get('doctor_id', None)
+        if doctor_id is not None:
+            queryset = queryset.filter(doctor_id=doctor_id)
+        return queryset
 
 
