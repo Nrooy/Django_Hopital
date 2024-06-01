@@ -24,8 +24,8 @@ router = DefaultRouter()
 router.register(r'inf', DoctorViewSet)
 router.register(r'position', PositionViewSet)
 router.register(r'specialization', SpecializationViewSet)
-router.register(r'schedules', ScheduleViewSet)
-router.register(r'reviews', ReviewViewSet)
+router.register(r'schedules', ScheduleViewSet, basename='schedule')
+router.register(r'reviews', ReviewViewSet, basename='review')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
